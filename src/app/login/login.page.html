@@ -1,0 +1,36 @@
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="false" >
+
+  <ion-card class="centered-header">
+    <ion-card-header >
+      <ion-card-title>SkeletonAPP</ion-card-title>
+      <ion-card-subtitle>¡Bienvenido!</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <form >
+        <ion-list>
+          <ion-item>
+            <ion-input required [(ngModel)]="usuario" name="usuario"  label="Usuario" maxlength="8" minlength="3" labelPlacement="floating" placeholder="Ingresar usuario"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input required [(ngModel)]="clave" name="clave"  label="Clave" maxlength="4" type="password" labelPlacement="floating" placeholder="Ingresar clave"></ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-button fill="solid" (click)="irAHome()" type="submit" [disabled]="usuario === '' || clave === ''">
+          <ion-icon name="log-in-outline"></ion-icon>
+          Iniciar sesión
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  
+</ion-content>

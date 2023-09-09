@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataServiceService } from '../data-service.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  usuario: string = '';
+
+  constructor(private dataServices: DataServiceService) {}
+
+  ngOnInit() {
+    this.usuario = this.dataServices.getUsuario();
+  }
 
 }
